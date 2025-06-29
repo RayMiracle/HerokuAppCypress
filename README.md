@@ -44,6 +44,7 @@ cypress/
   ├── support/       # Custom commands and configuration overrides
 cypress.config.js     # Cypress configuration file
 package.json          # Project dependencies and scripts
+```
 
 
 ### 📄 License
