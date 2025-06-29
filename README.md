@@ -24,7 +24,7 @@ This test suite covers the following functionalities:
 2. [Download and install Node.js](https://nodejs.org) (npm included)  
 3. Clone the repository:  
    ```bash
-   git clone https://github.com/cypress-io/cypress-realworld-testing-course-app.git
+   git clone https://github.com/RayMiracle/HerokuAppCypress.git
 4. npm install
 
 
