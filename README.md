@@ -38,6 +38,7 @@ Then simply select a test specification from the UI.
 
 ### 📁 Project Structure
 
+```text
 cypress/
   ├── e2e/           # Test specifications
   ├── support/       # Custom commands and configuration overrides
