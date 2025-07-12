@@ -6,7 +6,7 @@ A suite of automated end-to-end (E2E) tests written in [Cypress](https://www.cyp
 
 ## 🧪 Tested Features
 
-This test suite covers the following functionalities:
+This test suite covers the following functionalities, using Page Object Model approach:
 
 - **Authentication** – Login flow and error handling
 - **Dropdown** – Option selection and state verification
@@ -41,6 +41,7 @@ Then simply select a test specification from the UI.
 ```text
 cypress/
   ├── e2e/           # Test specifications
+    ├── pages/       # Page Object Model specifications
   ├── support/       # Custom commands and configuration overrides
 cypress.config.js     # Cypress configuration file
 package.json          # Project dependencies and scripts
