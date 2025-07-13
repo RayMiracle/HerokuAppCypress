@@ -1,27 +1,19 @@
+// Import the Page Object Models for the tested pages
+import { HomePage } from './pages/HomePage';
+import { EntryAdPage } from './pages/EntryAddPage';
+
+// Main test suite for modal window-related scenarios
 describe('Modal Window tests', () => {
+
+  // Test: Should open and close the modal window
   it('Opens and closes modal window', () => {
-    cy.openHomePage()
+    cy.openHomePage(); // Open the application's home page
 
-    cy.contains('Entry Ad')
-      .click()
+    const homePage = new HomePage();
+    homePage.goToEntryAd(); // Navigate from home to the Entry Ad (modal) page
 
-    cy.url()
-      .should('contain', '/entry_ad')
-
-    cy.contains('h3', 'Entry Ad')
-      .should('be.visible')
-    
-    cy.get('.modal')
-      .should('be.visible')
-    
-    cy.get('.modal-title h3')
-      .should('have.text', 'This is a modal window')
-    
-    cy.get('.modal-footer p')
-      .should('have.text', 'Close')
-      .click()
-    
-    cy.get('.modal')
-      .should('not.be.visible')
-  })
-})
+    const entryAdPage = new EntryAdPage();
+    entryAdPage.checkInitialEntryAdPage(); // Assert that the modal window is displayed
+    entryAdPage.closeModalWindow(); // Close the modal window and verify it is closed
+  });
+});

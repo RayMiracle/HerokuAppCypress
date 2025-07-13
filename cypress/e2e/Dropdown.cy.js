@@ -1,29 +1,21 @@
+// Import the Page Object Models for the tested pages
+import { HomePage } from './pages/HomePage';
+import { DropdownPage } from './pages/DropdownPage';
+
+// Main test suite for dropdown-related scenarios
 describe('Dropdown tests', () => {
+
+  // Test: Verifies dropdown options and selection functionality
   it('Verifies dropdown options', () => {
-    cy.openHomePage()
+    cy.openHomePage(); // Open the application's home page
 
-    cy.contains('Dropdown')
-      .click()
+    const homePage = new HomePage();
+    homePage.goToDropdown(); // Navigate from home to the dropdown page
 
-    cy.url()
-      .should('contain', '/dropdown')
-    
-    cy.get('h3')
-      .should('have.text', 'Dropdown List')
+    const dropdownPage = new DropdownPage();
+    dropdownPage.checkInitialDropdownPage(); // Assert that the dropdown page is displayed
 
-    cy.get('#dropdown option')
-      .should('have.length', 3)
-
-    cy.get('#dropdown')
-      .find('option:selected')
-      .should('have.text', 'Please select an option')
-
-    cy.get('#dropdown')
-      .select('Option 1')
-      .should('have.value', '1')
-
-    cy.get('#dropdown')
-      .select('Option 2')
-      .should('have.value', '2')
-  })
-})
+    // Custom method to check dropdown options and selection (implementation in POM)
+    dropdownPage.selectOptions();
+  });
+});
